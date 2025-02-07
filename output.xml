@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.11.8 on win32)" generated="2025-02-07T09:35:10.986962" rpa="false" schemaversion="5">
+<suite id="s1" name="Homepage" source="C:\Users\jelly.perwita\OneDrive - PT IDX Solusi Teknologi Informasi\Documents\Jelly\Robotframework_Demoblaze\Testcase\homepage.robot">
+<test id="s1-t1" name="03.Login with valid account" line="26">
+<kw name="Start Test Case" owner="setup" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-07T09:35:11.520151" level="INFO">${OS} = Windows</msg>
+<var>${OS}</var>
+<arg>platform.system()</arg>
+<arg>platform</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.520151" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-07T09:35:11.531484" level="INFO">"running on Windows-Chrome"</msg>
+<arg>"running on ${OS}-${BROWSER}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.520151" elapsed="0.011333"/>
+</kw>
+<kw name="Get Browser Ids" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:11.531484" level="INFO">@{Browser_id} = [ ]</msg>
+<var>@{Browser_id}</var>
+<doc>Returns index of all active browser as list.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Start Test" owner="setup">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>"Running on Windows - Chrome"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-07T09:35:11.531484" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FF8B7A5510&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].${BROWSER}Options()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.536010" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-07T09:35:11.536010" level="INFO">${options.prefs} = {'profile.default_content_setting_values.geolocation': '1'}</msg>
+<var>${options.prefs}</var>
+<arg>profile.default_content_setting_values.geolocation=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.536010" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${options.prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.536010" elapsed="0.000000"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:11.536010" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.536010" elapsed="2.025756"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:13.561766" level="INFO">Opening url 'https://www.demoblaze.com/'</msg>
+<arg>${URLWEB}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-02-07T09:35:13.561766" elapsed="1.048488"/>
+</kw>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="3.079735"/>
+</kw>
+<arg>@{Browser_id}==[]</arg>
+<arg>Start Test</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-07T09:35:11.531484" elapsed="3.079735"/>
+</kw>
+<status status="PASS" start="2025-02-07T09:35:11.520151" elapsed="3.091068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:14.613199" level="INFO">Clicking element '//a[@id='signin2']'.</msg>
+<arg>${LoginMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T09:35:14.612201" elapsed="0.264904"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:14.877105" level="INFO">Typing text 'JellyQA098' into text field '//input[@id='sign-username']'.</msg>
+<arg>${LoginUsername}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T09:35:14.877105" elapsed="0.333311"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:15.211415" level="INFO">Typing text 'Password123' into text field '//input[@id='sign-password']'.</msg>
+<arg>${LoginPassword}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T09:35:15.211415" elapsed="0.199315"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-07T09:35:15.411731" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<msg time="2025-02-07T09:35:15.699608" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-07T09:35:15.699608" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.54)
+Stacktrace:
+	GetHandleVerifier [0x00007FF603E32EC5+28789]
+	(No symbol) [0x00007FF603D9F870]
+	(No symbol) [0x00007FF603C38DCC]
+	(No symbol) [0x00007FF603C90664]
+	(No symbol) [0x00007FF603C82234]
+	(No symbol) [0x00007FF603CB721A]
+	(No symbol) [0x00007FF603C81AE6]
+	(No symbol) [0x00007FF603CB7430]
+	(No symbol) [0x00007FF603CDF6C3]
+	(No symbol) [0x00007FF603CB6FF3]
+	(No symbol) [0x00007FF603C7FF0E]
+	(No symbol) [0x00007FF603C81193]
+	GetHandleVerifier [0x00007FF60417D5FD+3479469]
+	GetHandleVerifier [0x00007FF6041971A3+3584851]
+	GetHandleVerifier [0x00007FF60418C44D+3540477]
+	GetHandleVerifier [0x00007FF603EF8B6A+838938]
+	(No symbol) [0x00007FF603DAA4EF]
+	(No symbol) [0x00007FF603DA6954]
+	(No symbol) [0x00007FF603DA6AF6]
+	(No symbol) [0x00007FF603D96499]
+	BaseThreadInitThunk [0x00007FFF55C8259D+29]
+	RtlUserThreadStart [0x00007FFF568EAF38+40]
+</msg>
+<arg>${ButtonLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-07T09:35:15.411731" elapsed="0.488414">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.54)
+Stacktrace:
+	GetHandleVerifier [0x00007FF603E32EC5+28789]
+	(No symbol) [0x00007FF603D9F870]
+	(No symbol) [0x00007FF603C38DCC]
+	(No symbol) [0x00007FF603C90664]
+	(No symbol) [0x00007FF603C82234]
+	(No symbol) [0x00007FF603CB721A]
+	(No symbol) [0x00007FF603C81AE6]
+	(No symbol) [0x00007FF603CB7430]
+	(No symbol) [0x00007FF603CDF6C3]
+	(No symbol) [0x00007FF603CB6FF3]
+	(No symbol) [0x00007FF603C7FF0E]
+	(No symbol) [0x00007FF603C81193]
+	GetHandleVerifier [0x00007FF60417D5FD+3479469]
+	GetHandleVerifier [0x00007FF6041971A3+3584851]
+	GetHandleVerifier [0x00007FF60418C44D+3540477]
+	GetHandleVerifier [0x00007FF603EF8B6A+838938]
+	(No symbol) [0x00007FF603DAA4EF]
+	(No symbol) [0x00007FF603DA6954]
+	(No symbol) [0x00007FF603DA6AF6]
+	(No symbol) [0x00007FF603D96499]
+	BaseThreadInitThunk [0x00007FFF55C8259D+29]
+	RtlUserThreadStart [0x00007FFF568EAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LoginUserWelcome}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-02-07T09:35:15.900145" elapsed="0.000000"/>
+</kw>
+<tag>Login</tag>
+<status status="FAIL" start="2025-02-07T09:35:11.520151" elapsed="4.379994">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.54)
+Stacktrace:
+	GetHandleVerifier [0x00007FF603E32EC5+28789]
+	(No symbol) [0x00007FF603D9F870]
+	(No symbol) [0x00007FF603C38DCC]
+	(No symbol) [0x00007FF603C90664]
+	(No symbol) [0x00007FF603C82234]
+	(No symbol) [0x00007FF603CB721A]
+	(No symbol) [0x00007FF603C81AE6]
+	(No symbol) [0x00007FF603CB7430]
+	(No symbol) [0x00007FF603CDF6C3]
+	(No symbol) [0x00007FF603CB6FF3]
+	(No symbol) [0x00007FF603C7FF0E]
+	(No symbol) [0x00007FF603C81193]
+	GetHandleVerifier [0x00007FF60417D5FD+3479469]
+	GetHandleVerifier [0x00007FF6041971A3+3584851]
+	GetHandleVerifier [0x00007FF60418C44D+3540477]
+	GetHandleVerifier [0x00007FF603EF8B6A+838938]
+	(No symbol) [0x00007FF603DAA4EF]
+	(No symbol) [0x00007FF603DA6954]
+	(No symbol) [0x00007FF603DA6AF6]
+	(No symbol) [0x00007FF603D96499]
+	BaseThreadInitThunk [0x00007FFF55C8259D+29]
+	RtlUserThreadStart [0x00007FFF568EAF38+40]
+</status>
+</test>
+<status status="FAIL" start="2025-02-07T09:35:11.000826" elapsed="4.918500"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Login</stat>
+</tag>
+<suite>
+<stat name="Homepage" id="s1" pass="0" fail="1" skip="0">Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
